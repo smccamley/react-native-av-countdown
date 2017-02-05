@@ -5,7 +5,7 @@
   "bugs": {
     "url": "https://github.com/smccamley/react-native-av-countdown/issues"
   },
-  "dependencies": {},
+  "dependencies": {"react-addons-update":"15.4.2"},
   "description": "A simple countdown component for React Native, pure js",
   "devDependencies": {},
   "directories": {},
@@ -32,5 +32,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.1.1"
+  "version": "1.1.2"
 }

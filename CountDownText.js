@@ -15,14 +15,12 @@ this.refs.countDownText.end();
 import React, {Component} from 'react';
 import ReactNative from 'react-native'
 import countDown from './countDown'
+import update from 'react-addons-update'
 
 let {
   StyleSheet,
   Text,
 } = ReactNative;
-
-let update = React.addons.update;
-
 
 export default class CountDownText extends Component {
   // 定时回调
@@ -34,12 +32,12 @@ export default class CountDownText extends Component {
   }
   
   // 判断两个时间是否相等，如果两个时间差在阀值之内，则可认为是相等
-  functionisTimeEquals(t1, t2){
+  isTimeEquals(t1, t2){
     let threshold = 2;
     return Math.abs(t1 - t2) < threshold;
   }
   // 当更新
-  functioncomponentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps){
     // 判断是否要重新计时
     let updating = true;
     if(this.props.step == nextProps.step && this.props.step < 0){ // 倒计时的情况
@@ -72,14 +70,14 @@ export default class CountDownText extends Component {
     }
   }
   // 定时调用 intervalText 来更新状态 text
-  functiononInterval(){
+  onInterval(){
     this.setState({text: this.props.intervalText.apply(null, arguments)})
   }
-  functiononEnd(timePassed){
+  onEnd(timePassed){
     this.setState({text: this.props.endText});
     this.props.afterEnd && this.props.afterEnd(timePassed);
   }
-  functioncomponentDidMount(){
+  componentDidMount(){
     /*
     this.counter = countDown({
         countType: "seconds",
@@ -109,26 +107,26 @@ export default class CountDownText extends Component {
       this.start();
     }
   }
-  functioncomponentWillUnmount(){
+  componentWillUnmount(){
     // 重置倒计时
     this.reset();
   }
   // 开始计时
-  functionstart(){
+  start(){
     this.counter.start();
   }
   // 结束计时
-  functionend(){
+  end(){
     this.counter.end();
   }
   // 重置
-  functionreset(){
+  reset(){
     this.counter.reset();
   }
-  functionrender(){
+  render(){
     return <Text style={this.props.style}>{this.state.text}</Text>
   }
-  functiongetTimePassed(){
+  getTimePassed(){
     return this.counter.timePassed;
   }
 }
@@ -142,5 +140,5 @@ CountDownText.defaultProps = {
   startText: null, // 开始的文本
   intervalText: null, // 定时的文本，可以是回调函数
   endText: null, // 结束的文本
-  auto: false, // 是否自动开始 
+  auto: false
 }
