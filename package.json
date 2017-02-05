@@ -1,0 +1,36 @@
+{
+  "author": {
+    "name": "smccamley"
+  },
+  "bugs": {
+    "url": "https://github.com/smccamley/react-native-av-countdown/issues"
+  },
+  "dependencies": {},
+  "description": "A simple countdown component for React Native, pure js",
+  "devDependencies": {},
+  "directories": {},
+  "homepage": "https://github.com/smccamley/react-native-av-countdown#readme",
+  "keywords": [
+    "react-native",
+    "countdown"
+  ],
+  "license": "MIT",
+  "main": "CountDownText.js",
+  "maintainers": [
+    {
+      "email": "s.mccamley@gmail.com",
+      "name": "smccamley"
+    }
+  ],
+  "name": "react-native-av-countdown",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smccamley/react-native-av-countdown.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.1"
+}
